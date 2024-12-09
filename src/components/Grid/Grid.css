@@ -1,0 +1,63 @@
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px; /* Space between items */
+  justify-content: center; /* Centering the items horizontally */
+  margin: 20px;
+  height: auto;
+  background-color: mediumslateblue;
+
+  
+}
+
+.product-card {
+  /* flex: 1 1 calc(25% - 15px); Makes each product card take up 25% of the container width, with space between cards */
+  background-color: lightskyblue;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  /* border-radius: 8px; Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  overflow: hidden; /* Prevent content overflow */
+  text-align: center; /* Center the text inside cards */
+  max-width: 250px; /* Max width of each product card */
+  border: 8px solid lightgray; /* Red border */
+  display: flex;
+  overflow-x:scroll;
+  /* color: lightskyblue; */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: Rounded corners for images */
+}
+
+.product-card h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.product-card p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.product-card button {
+  background-color: #00bcd4; /* Aqua color button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #0097a7; /* Darker shade for hover effect */
+}
+
+
+

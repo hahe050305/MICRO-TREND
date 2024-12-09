@@ -1,0 +1,107 @@
+/* Container for the search results */
+.search-results-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Title of the search results */
+.search-results-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style for the product cards wrapper */
+.results {
+    display: flex;
+    flex-wrap: wrap; /* Corrected from 'flex: wrap' to 'flex-wrap' */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px; /* Adjusted gap for better spacing */
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Styling for individual product cards */
+.product-card {
+    background-color: lightskyblue;
+    border-radius: 10px;
+    border: 0px solid lightgrey; /* Fixed incorrect border syntax */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 100%; /* Allow cards to take up full width */
+    max-width: 400px; /* Max width for product cards */
+    height: 450px; /* Fixed height to maintain uniformity */
+    display: flex;
+    flex-direction: column; /* Ensures content is stacked vertically */
+}
+
+/* Product image styles */
+.product-card img {
+    width: 90%;
+    height: 200px;
+    object-fit: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect on product card */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect on image */
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Product details (text) inside the card */
+.product-card div {
+    padding: 15px;
+    flex-grow: 1; /* Makes text section grow to fill remaining space */
+    display: flex;
+    flex-direction: column; /* Ensures text content stays below the image */
+    justify-content: flex-end; /* Align text content to bottom */
+}
+
+/* Product title */
+.product-card h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center; /* Centers the title */
+}
+
+/* Product price */
+.product-card p {
+    font-size: 16px;
+    color: #777;
+     margin-bottom: 6px; 
+    text-align: center; /* Centers the price */
+}
+
+/* Category text */
+.product-card .category {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+    text-align: center; /* Centers the category */
+}
+
+/* No results message */
+.results p {
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    padding: 20px;
+}

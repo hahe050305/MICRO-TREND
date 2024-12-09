@@ -1,0 +1,61 @@
+.deals-page-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.deal-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px; /* Set a max-width for better alignment */
+  color: black;
+}
+
+.deal-card {
+  position: relative; /* Ensure positioning for absolute elements like discount banner */
+  background-color: lightskyblue;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9); /* Enhanced shadow for 3D effect */
+  text-align: center;
+  width: calc(25% - 20px); /* Ensure cards are aligned in rows of 4 */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.deal-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover for 3D feel */
+}
+
+.deal-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.discount-banner {
+  position: absolute; /* Make it stick to the card corner */
+  top: 10px; /* Adjust vertical position */
+  left: 10px; /* Adjust horizontal position */
+  background-color: #ff6347;
+  color: #fff;
+  padding: 5px 10px; /* Add horizontal padding for better readability */
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold; /* Highlight the discount text */
+  z-index: 1; /* Ensure it stays above other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow for the banner */
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-top: 10px;
+  color:white;
+}

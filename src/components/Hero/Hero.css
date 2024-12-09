@@ -1,0 +1,277 @@
+/* General Styling */
+.hero-container {
+  font-family: 'Arial', sans-serif;
+  /* color: linear-gradient(45deg, #e63946, white) */
+  /* color: #333; */
+}
+
+/* Hero Section */
+.hero-section {
+  height: 550px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('/public/e-com.jpg') no-repeat center center / cover;
+  position: relative;
+  filter: brightness(1);
+  /* color: lightblue; */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; 
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px 40px;
+  border-radius: 3px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px; 
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #febd69;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+    color: #eaeaea;  
+}
+
+.shop-now {
+  background-color: #febd69;
+  color: #333;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px 8px 0 0; /* Add rounded corners to the top */
+
+}
+
+.shop-now:hover {
+  background-color: #f7a840;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Trending Now Section */
+.trending-section, .recommendations-section, .deals-section, .categories-section{
+  padding: 20px;
+  /* background: linear-gradient(135deg, aqua 50%, #FFFFFF 70%); */
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: scale(1.05);
+  border-radius: 8px 8px 0 0;
+
+  /* background-color: aqua; */
+  /* color: aqua; Add rounded corners to the top */
+  /* background: linear-gradient(135deg, #e63946 50%, #ffffff 50%); */
+  /* box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.4); Softening the boundary */
+  /* background: linear-gradient(135deg, rgba(0, 255, 255, 1) 2%, rgba(255, 255, 255, 0.5) 100%); */
+}
+
+.trending-cards, .recommendation-cards, .deal-cards, .categories {
+  display: flex;
+  overflow-x: scroll;
+  gap: 50px;
+  padding: 8px;
+  border-radius: 8px 8px 0 0; /* Add rounded corners to the top */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover for 3D feel */
+  background-color: mediumslateblue;
+
+}
+
+.trending-card, .recommendation-card, .deal-card, .category-card{
+  min-width: 150px; 
+  background: lightskyblue;
+  text-align: center;
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  color:black;
+  transition: transform 0.3s ease;
+  border-radius: 8px 8px 0 0; /* Add rounded corners to the top */
+  box-shadow: 0 12px 24px white(0, 0, 0, 0.8); /* Deeper shadow on hover for 3D feel */
+  border: 6px solid lightgray; /* Red border */
+  /* box-shadow: 0 0 12px 24px rgba(255, 255, 255, 0.5); */
+}
+
+.trending-card img, .recommendation-card img, .deal-card img, .category-card img {
+  width: 80%; /* Adjust to the card's width */
+  height: 180px; /* Maintain aspect ratio */
+  border-radius: 5px 5px 0 0; /* Rounded corners for the top of the image */
+  object-fit: cover;
+  margin-top: 10px;
+  max-width: 400px  /* Ensure the image covers the area */
+}
+
+.trending-card:hover, .recommendation-card:hover, .deal-card:hover, .category-card:hover .ad-card:hover {
+  transform: scale(1.05);
+}
+
+.deal-card .discount-banner {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #febd69;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border-radius: 8px 8px 0 0; /* Add rounded corners to the top */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover for 3D feel */
+  /* background-color: lightskyblue; */
+
+}
+
+
+.ad-section {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 10px solid black;
+  border-radius: 8px;
+  /* background-color: #f9f9f9; */
+  max-width: 600px; /* Adjust width to make it rectangular */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: lightskyblue;
+
+
+}
+
+.ad-card img {
+  width: 450px; /* Make the image fit the card */
+  height: auto;
+  border-radius: 8px 8px 0 0;
+  margin-top: 4px /* Add rounded corners to the top */
+}
+
+.ad-card p {
+  margin: 1rem 0;
+  font-size: 1.6rem;
+  /* color: white; */
+}
+
+.sponser
+{
+  font-weight: bolder;
+  font-size: large;
+  font-style: initial;
+}
+
+/* Dynamic Carousel Styling */
+/* Dynamic Carousel Styling */
+/* Dynamic Carousel Styling */
+/* Dynamic Carousel Styling */
+/* Dynamic Carousel Styling */
+.promo-carousel {
+  /* position: relative; */
+  height: 250px; /* Height of the carousel */
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Horizontal gradient from left to right */
+  background: linear-gradient(to right, red 40%, #ffcccc);
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide any overflow from carousel cards */
+  /* width:540px; */
+}
+
+.promo-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  padding: 20px;
+  /* box-sizing: border-box; */
+  /* position: absolute; */
+  /* opacity: 0; Hide the card by default */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition for opacity and movement */
+}
+
+.promo-card.active {
+  opacity: 1; /* Show the active card */
+  transform: translateX(0); /* Ensure the active card is centered */
+}
+
+.promo-card img {
+  width: 45%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  padding-bottom: 44px;
+  padding-left:auto;
+}
+
+.promo-text {
+  width: 80%; /* Adjust width for text */
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.promo-text h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: gold;
+  font-weight:bolder;
+}
+
+.promo-text p {
+  font-size: 1.4rem;
+  color: purple;
+  margin-bottom: 15px;
+  font-weight:bold;
+}
+
+/* Carousel Animation Logic */
+.promo-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.promo-card-container {
+  /* display: flex; */
+  position: relative;
+  /* width: 80%; */
+  /* height: 100%; */
+  transition: transform 1s ease-in-out; /* Apply smooth transition */
+}
+
+/* Each promo-card will be given its turn to show */
+.promo-card-container {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.promo-card-container.active {
+  transform: translateX(0); /* Start showing first card */
+}
+
+/* For smoother transition */
+.promo-card-container .promo-card {
+  min-width: 50%; /* Ensure each card occupies full width of the carousel */
+  transition: opacity 1s ease-in-out;
+}
+
+.promo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}

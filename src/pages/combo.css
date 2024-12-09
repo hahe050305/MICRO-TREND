@@ -1,0 +1,94 @@
+/* Main container for the page */
+.combo-page-container {
+    padding: 20px;
+    background-color: mediumslateblue; /* Light purple background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Heading style */
+  .combo-page-container h2 {
+    font-size: 28px;
+    font-weight: bolder;
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  /* Combo card grid container */
+  .combo-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px; /* Set a max-width for better alignment */
+    color: black;
+  }
+  
+  /* Individual card styling */
+  .combo-card {
+    position: relative;
+    background: linear-gradient(45deg, red, white );
+    border: 8px solid lightgrey;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Card hover effect */
+  .combo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px lightgrey(0, 0, 0, 0.6);
+  }
+  
+  /* Banner for discount */
+  .discount-banner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ffa500; /* Orange color for discount banner */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image container inside each card */
+  .combo-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px; /* Space between images */
+    margin-bottom: 12px;
+    margin-top: 28px;
+  }
+  
+  /* Individual images within the card */
+  .combo-image {
+    max-width: 100px;
+    max-height: 190px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  /* Product name and price styles */
+  .combo-card p {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bolder;
+    /* color: black; */
+  }
+  
+  .price {
+    color: gold;
+    font-weight:bolder; 
+    font-size: medium;/* Red-orange for price text */
+  }
+  
