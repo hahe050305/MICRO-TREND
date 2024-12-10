@@ -5,7 +5,7 @@
     padding: 10px 20px;
     background: linear-gradient(to right, #a7d9cc, #c2e3f3); /* Soft green to pastel blue */
 
-    color: white;
+    /* color: white; */
   }
   
   .logo a {
@@ -54,3 +54,19 @@
     display: block;
   }
   
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links li {
+      margin: 5px 0;
+    }
+  }

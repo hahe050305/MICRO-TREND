@@ -23,8 +23,8 @@
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
-    position: absolute; /* Position at the top corner */
-    top: 20px;
+    position: sticky; /* Position at the top corner */
+    top: 10px;
     right: 20px;
     z-index: 10;
 }
