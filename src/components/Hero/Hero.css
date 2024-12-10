@@ -1,6 +1,7 @@
 /* General Styling */
 .hero-container {
   font-family: 'Arial', sans-serif;
+  font-weight:bolder;
   /* color: linear-gradient(45deg, #e63946, white) */
   /* color: #333; */
 }
@@ -33,12 +34,14 @@
   font-weight: bold;
   margin-bottom: 15px;
   color: #febd69;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 25px;
-    color: #eaeaea;  
+  color: #eaeaea;  
 }
 
 .shop-now {
@@ -82,6 +85,7 @@
 .trending-cards, .recommendation-cards, .deal-cards, .categories {
   display: flex;
   overflow-x: scroll;
+  overflow:hidden;
   gap: 50px;
   padding: 8px;
   border-radius: 8px 8px 0 0; /* Add rounded corners to the top */
@@ -99,6 +103,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
   color:black;
+  font-weight:bolder;
   transition: transform 0.3s ease;
   border-radius: 8px 8px 0 0; /* Add rounded corners to the top */
   box-shadow: 0 12px 24px white(0, 0, 0, 0.8); /* Deeper shadow on hover for 3D feel */
@@ -117,6 +122,7 @@
 
 .trending-card:hover, .recommendation-card:hover, .deal-card:hover, .category-card:hover .ad-card:hover {
   transform: scale(1.05);
+  background-color: mediumpurple;
 }
 
 .deal-card .discount-banner {
@@ -175,13 +181,14 @@
 /* Dynamic Carousel Styling */
 .promo-carousel {
   /* position: relative; */
-  height: 250px; /* Height of the carousel */
-  margin-top: 20px;
-  margin-bottom: 40px;
+  height: 300px; /* Height of the carousel */
+  margin-top: 2px;
+  margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 /* Horizontal gradient from left to right */
-  background: linear-gradient(to right, red 40%, #ffcccc);
+  background: linear-gradient(to right, #a7d9cc, #c2e3f3); /* Soft green to pastel blue */
+
   /* display: flex; */
   align-items: center;
   justify-content: center;
@@ -195,6 +202,9 @@
   justify-content: space-between;
   width: 60%;
   padding: 20px;
+  height:250px;
+  background: mediumaquamarine;
+
   /* box-sizing: border-box; */
   /* position: absolute; */
   /* opacity: 0; Hide the card by default */
@@ -207,12 +217,13 @@
 }
 
 .promo-card img {
-  width: 45%;
+  width: 40%;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
   padding-bottom: 44px;
-  padding-left:auto;
+  padding-left:4px;
+  padding-top:56px;
 }
 
 .promo-text {
@@ -274,4 +285,5 @@
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  background: linear-gradient(to right, #a7d9cc, #c2e3f3); /* Soft green to pastel blue */
 }

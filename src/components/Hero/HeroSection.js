@@ -42,7 +42,7 @@ function HeroSection() {
     // Change carousel cards every 5 seconds
     const interval = setInterval(() => {
       setCurrentCard((prev) => (prev + 1) % carouselData.length);
-    }, 5000); // 5-second delay between card changes
+    }, 2000); // 5-second delay between card changes
 
     return () => clearInterval(interval);
   }, []);

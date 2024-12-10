@@ -31,6 +31,7 @@ const ProductDetails = () => {
   const relevantProducts = [
     { name: "Purple Headphones -Ear Comforters", image: "/headphones.jpg" },
     { name: "Boat Earpods -Unleash the Beast", image: "/boat.jpg" },
+    { name: "Ajio -Sound Bassed", image:'/ajio.jpg'}
   ];
 
   // Handle "Add to Cart" button click

@@ -10,36 +10,33 @@ function SearchBar() {
   const navigate = useNavigate();
 
   const productData = [
-    { name: "iPhone 14", price: 1000, categories: ["Electronics", "Mobiles"] },
-    { name: "Samsung Galaxy S23", price: 2000, categories: ["Electronics", "Mobiles"] },
-    { name: "OnePlus 11", price: 1500, categories: ["Electronics", "Mobiles"] },
-    { name: "MacBook Pro", price: 3000, categories: ["Electronics", "Laptops"] },
-    { name: "Dell XPS 13", price: 2500, categories: ["Electronics", "Laptops"] },
-    { name: "Nike Running Shoes", price: 150, categories: ["Fashion", "Footwear"] },
-    { name: "Levi’s Denim Jacket", price: 200, categories: ["Fashion", "Men", "Clothing"] },
-    { name: "Zara Floral Dress", price: 100, categories: ["Fashion", "Women", "Clothing"] },
-    { name: "Instant Pot Duo", price: 100, categories: ["Home & Kitchen", "Appliances"] },
-    { name: "Dyson V11 Vacuum Cleaner", price: 600, categories: ["Home & Kitchen", "Appliances"] },
-    { name: "Ikea Office Desk", price: 200, categories: ["Home & Kitchen", "Furniture"] },
-    { name: "Trek Mountain Bike", price: 1000, categories: ["Sports", "Outdoor Gear"] },
-    { name: "Wilson Tennis Racket", price: 120, categories: ["Sports", "Outdoor Gear"] },
-    { name: "Neutrogena Face Wash", price: 15, categories: ["Beauty", "Skincare"] },
-    { name: "Olay Regenerist Moisturizer", price: 25, categories: ["Beauty", "Skincare"] },
-    { name: "iPad Pro", price: 1200, categories: ["Electronics", "Tablets"] },
-    { name: "Samsung Galaxy Tab S8", price: 900, categories: ["Electronics", "Tablets"] },
-    { name: 'Apple Watch Series 8', price: 400, categories: ['Electronics', 'Smartwatches', 'Apple'] },
-    { name: 'Fitbit Charge 5', price: 150, categories: ['Electronics', 'Smartwatches', 'Fitbit'] },
-
-    { name: "Boat Airpods -Beast Edition", price: 58000, categories: ["Electronics", "Airpods"]},
-    { name: "Ajio Airpods -Belgium Black", price: 68000, categories: ["Electronics", "Airpods"]},
-    { name: "Boat Black Airpods -Low Latency", price: 47000, categories: ["Electronics", "Airpods"]},
-    { name: "Boult Audio Airpods -Matt Green", price: 54000, categories: ["Electronics", "Airpods"]},
-
-    { name: "Asuz Vivobook -16S", price: 58000, categories: ["Electronics", "Laptops"], image: '/asuz.jpg'},
-    { name: "Apple Macbook Air Series", price: 68000, categories: ["Electronics", "Laptops"], image:'/deal_1.jpg' },
-    { name: "Hp Laptop -Student Series", price: 47000, categories: ["Electronics", "Laptops"], image: '/hp.jpg' },
-    { name: "Dell Inspiron I3-Gen", price: 54000, categories: ["Electronics", "Laptops"], image: "/dell.jpg" },
-
+    { name: "Boat Rockerz Headphones", price: 1300, categories: ["Electronics"] },
+    { name: "Asus Vivobook Series", price: 50000, categories: ["Electronics"] },
+    { name: "Apple Macbook Air", price: 65000, categories: ["Electronics"] },
+    { name: "Epson Natural Black Printer", price: 34000, categories: ["Electronics"] },
+    { name: "Sony Bravia O-LED Curved Display", price: 55000, categories: ["Electronics"] },
+    { name: "Nike Running Shoes", price: 1400, categories: ["Fashion"] },
+    { name: "Levi’s Denim Jacket", price: 350, categories: ["Fashion"] },
+    { name: "Roadster Blue Boys", price: 540, categories: ["Fashion"] },
+    { name: "Here and How -Kids Edition", price: 450, categories: ["Fashion"] },
+    { name: "Dyson V11 Vacuum Cleaner", price: 3400, categories: ["Home & Office"] },
+    { name: "Instant Pot Duo", price: 2700, categories: ["Home & Office"] },
+    { name: "Ikea Office Desk", price: 2500, categories: ["Home & Office"] },
+    { name: "Trek Mountain Bike", price: 27000, categories: ["Sports"] },
+    { name: "Wilson Tennis Racket", price: 2400, categories: ["Sports"] },
+    { name: "MRF Cricket Bat - Genius Edition", price: 1800, categories: ["Sports"] },
+    { name: "Boat Rockerz -650Hz Bass Boosted", price: 2200, categories: ["Earpods"] },
+    { name: "Boat Purple Headphones -Ear Comforters", price: 1500, categories: ["Earpods"] },
+    { name: "JBL tunes -Bass Boosted", price: 880, categories: ["Earpods"] },
+    { name: "Asus Vivobook -16S", price: 45000, categories: ["Laptops"] },
+    { name: "Apple Mackbook Air Series", price: 67000, categories: ["Laptops"] },
+    { name: "Hp Student series", price: 47000, categories: ["Laptops"] },
+    { name: "Apple Smartwatch -Waterproof", price: 3400, categories: ["SmartWatches"] },
+    { name: "Apple Watch Series-9", price: 3200, categories: ["SmartWatches"] },
+    { name: "NoiseFit Colourfit Pro-2", price: 2300, categories: ["SmartWatches"] },
+    { name: "Addixon Black Bags", price: 880, categories: ["Backpacks"] },
+    { name: "American Tourister Classic", price: 567, categories: ["Backpacks"] },
+    { name: "Roadster Black Backbags", price: 800, categories: ["Backpacks"] },
   ];
 
   const handleSearch = (e) => {
@@ -54,7 +51,6 @@ function SearchBar() {
     if (input) {
       const filteredSuggestions = productData.filter((item) => {
         const priceLimit = parseInt(priceFilter);
-
         return (
           item.name.toLowerCase().includes(input.toLowerCase()) &&
           (!priceFilter || item.price <= priceLimit) &&
@@ -134,11 +130,13 @@ function SearchBar() {
           <option value="">All Categories</option>
           <option value="Electronics">Electronics</option>
           <option value="Fashion">Fashion</option>
-          <option value="Home & Kitchen">Home & Kitchen</option>
+          <option value="Home & Office">Home & Office</option>
           <option value="Sports">Sports</option>
           <option value="Beauty">Beauty</option>
           <option value="Laptops">Laptops</option>
-          <option value="Airpods">Airpods</option>
+          <option value="SmartWatches">SmartWatches</option>
+          <option value="Earpods">Earpods</option>
+          <option value="Backpacks">Backpacks</option>
         </select>
         <button type="submit">Search</button>
       </form>

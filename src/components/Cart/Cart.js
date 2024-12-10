@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Cart.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 function Cart() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [cartItems, setCartItems] = useState(location.state?.cartItems || []);
+  
+  // Retrieve previous cart items from localStorage if available
+  const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const [cartItems, setCartItems] = useState(location.state?.cartItems || storedCartItems);
+
+  // Update localStorage whenever cartItems change
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const updateQuantity = (productId, delta) => {
     setCartItems((prev) =>
