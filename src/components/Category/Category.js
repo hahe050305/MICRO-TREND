@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import './Category.css';
 import { useNavigate } from 'react-router-dom';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa'; // For the cart icon
 
 function CategoryPage({ onAddToCart }) {
   const navigate = useNavigate();
 
-  const [categoryNotifications, setCategoryNotifications] = useState({});
-  const [cartItems, setCartItems] = useState(
-    JSON.parse(localStorage.getItem('cartItems')) || []
-  );
+  const [categoryNotifications, setCategoryNotifications] = useState({}); // Notifications per category
+  const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cartItems')) || []); // Cart items state
 
-  const categories = 
-  [
+  const categories = [
     {
       name: 'Electronics',
       products: [
@@ -86,14 +83,23 @@ function CategoryPage({ onAddToCart }) {
       ],
     },
 
+    {
+      name: 'Mobiles',
+      products: [
+        { id:29,name: 'Motorola Edge -50 Fusion', price: 27000, image: '/motorola.jpg' },
+        { id:30, name: 'Realme Narzo -70X Flash Series', price: 27000, image: '/realme.jpg' },
+        { id:31, name: 'Redmi Note 14 Pro+', price: 34000, image:'/redmi.jpg'}
+      ],
+    },
   ];
 
   const handleProductClick = (product) => {
     navigate('/productdetail', { state: { product } });
   };
+  
 
   const handleAddToCart = (product, categoryName) => {
-    // Update cart items based on the previous state
+    // Update cart items
     setCartItems((prev) => {
       const existingItem = prev.find((item) => item.id === product.id);
       if (existingItem) {
@@ -107,16 +113,14 @@ function CategoryPage({ onAddToCart }) {
       }
     });
 
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+
     // Update notifications for the respective category
     setCategoryNotifications((prev) => ({
       ...prev,
       [categoryName]: `${product.name} has been added to the cart!`,
     }));
-
-    // Ensure that localStorage is updated after the state change
-    setTimeout(() => {
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }, 0);
 
     // Remove the notification after 3 seconds
     setTimeout(() => {
@@ -131,7 +135,7 @@ function CategoryPage({ onAddToCart }) {
     <div className="category-container">
       <div className="category-header">
         <h1>Categories</h1>
-        <button className="view-cart-btn" onClick={() => navigate('/cart')}>
+        <button className="view-cart-btn" onClick={() => navigate('/cart', { state: { cartItems } })}>
           <FaShoppingCart /> View Cart
         </button>
       </div>
@@ -139,20 +143,16 @@ function CategoryPage({ onAddToCart }) {
       {categories.map((category, index) => (
         <div key={index} className="category-section">
           <h2>{category.name}</h2>
+
+          {/* Display notification only for this category */}
           {categoryNotifications[category.name] && (
-            <div className="notification">
-              {categoryNotifications[category.name]}
-            </div>
+            <div className="notification">{categoryNotifications[category.name]}</div>
           )}
 
           <div className="category-cards">
             {category.products.map((product) => (
               <div className="category-card" key={product.id}>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  onClick={() => handleProductClick(product)}
-                />
+                <img src={product.image} alt={product.name} onClick={() => handleProductClick (product)} />
                 <h3>{product.name}</h3>
                 <p>${product.price}</p>
                 <button

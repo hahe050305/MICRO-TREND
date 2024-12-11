@@ -16,10 +16,10 @@ function ComboPage() {
       price: "Rs.69000",
     },
     {
-      name: "Rainy Protector: 3-foldable umbrella + Raincoat + RainCap",
+      name: "Rainy Protectors: 3-foldable umbrella + Raincoat + RainCap",
       images: ["/3fold.jpg", "/raincoat.jpg", "/cap.jpg"],
       discount: "20%",
-      price: "Rs.500",
+      price: "Rs. 600",
     },
     {
       name: "Kitchen Set: Blender + Mixer + Juicer",
@@ -32,7 +32,7 @@ function ComboPage() {
         name: "Winter Non-Negotiables: Sweater + Muffler + Ear protectors",
         images : ["/sweater.jpg", "/muffler.jpg", "protect.jpg"],
         discount: "35%",
-        price: "Rs. 600"
+        price: "Rs. 350"
     }
   ];
 

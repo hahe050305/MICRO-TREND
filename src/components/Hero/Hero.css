@@ -151,8 +151,12 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: lightskyblue;
 
-
 }
+
+.ad-section:hover{
+  background: mediumslateblue; /* Soft green to pastel blue */
+}
+
 
 .ad-card img {
   width: 450px; /* Make the image fit the card */
@@ -167,6 +171,11 @@
   /* color: white; */
 }
 
+.ad-card:hover{
+  background: mediumslateblue; /* Soft green to pastel blue */
+
+}
+
 .sponser
 {
   font-weight: bolder;
@@ -174,11 +183,6 @@
   font-style: initial;
 }
 
-/* Dynamic Carousel Styling */
-/* Dynamic Carousel Styling */
-/* Dynamic Carousel Styling */
-/* Dynamic Carousel Styling */
-/* Dynamic Carousel Styling */
 .promo-carousel {
   /* position: relative; */
   height: 300px; /* Height of the carousel */
@@ -308,13 +312,5 @@
   .shop-now {
     padding: 10px 15px;
     font-size: 1rem;
-  }
-
-  .promo-carousel{
-      
-  }
-
-  .promo-card{
-
   }
 }

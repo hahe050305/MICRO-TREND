@@ -169,6 +169,23 @@ function HeroSection() {
           </div>
         )}
       </div>
+
+      <div className="ad-section">
+        <h2>Sponsored Advertisement</h2>
+        {!showAdCard ? (
+          <p className="ad-loader">Loading Ad...</p>
+        ) : (
+          <div className="ad-card"
+              onClick={() =>
+                (window.location.href = `/Category`)
+              }>
+            <img src="/redmi.jpg" alt="Sponsored Product" />
+            <div className="sponser">
+              <p>Mark your calenders!! To be unleashed on DEC-13</p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

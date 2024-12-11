@@ -69,7 +69,7 @@ function App() {
             element={<ComboPage />}
           />
           <Route
-            path="/category/"  // New route for category page
+            path="/category"  // New route for category page
             element={<CategoryPage onAddToCart={handleAddToCart} />}  // Add CategoryPage component
           />
 
@@ -81,11 +81,6 @@ function App() {
           <Route
             path="/order"  // New route for category page
             element={<OrderTracking />}  // Add CategoryPage component
-          />
-
-          <Route
-            path="/productdetail"  // New route for category page
-            element={<ProductDetails/>}  // Add CategoryPage component
           />
 
           <Route
