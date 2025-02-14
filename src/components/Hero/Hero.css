@@ -91,11 +91,12 @@
   border-radius: 8px 8px 0 0; /* Add rounded corners to the top */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover for 3D feel */
   background-color: mediumslateblue;
+  justify-content: space-around;
 
 }
 
 .trending-card, .recommendation-card, .deal-card, .category-card{
-  min-width: 150px; 
+  min-width: 150px;  
   background: lightskyblue;
   text-align: center;
   /* border: 1px solid #ddd; */

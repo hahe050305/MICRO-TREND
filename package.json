@@ -25,6 +25,7 @@
     "web-vitals": "^2.1.4",
     "homepage": "https://hahe050305.github.io/MICRO-TREND"
   },
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

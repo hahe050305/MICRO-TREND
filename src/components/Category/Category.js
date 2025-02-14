@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import './Category.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation} from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa'; // For the cart icon
 
 function CategoryPage({ onAddToCart }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [categoryNotifications, setCategoryNotifications] = useState({}); // Notifications per category
   const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cartItems')) || []); // Cart items state
@@ -48,50 +49,79 @@ function CategoryPage({ onAddToCart }) {
     },
 
     {
-      name: 'Earpods',
+      name: 'Airpods',
       products: [
         { id:17, name: 'Boat Rockerz -650Hz Bass Boosted', price: 2200, image: '/boat.jpg' },
         { id:18, name: 'Boat Purple Headphones -Ear Comforters', price: 1500, image: '/headphones.jpg' },
-        { id:19, name: 'JBL tunes -Bass Boosted', price: 880, image:'/jbltune.jpg'}
+        { id:19, name: 'JBL tunes -Bass Boosted', price: 880, image:'/jbltune.jpg'},
+        { id:20, name: 'Boat 220Hz Airpods -Black', price: 980, image: '/boats.jpg'}
       ],
     },
 
     {
       name: 'Laptops',
       products: [
-        { id:20, name: 'Asuz Vivobook -16S', price: 45000, image: '/azuz.jpg' },
-        { id:21, name: 'Apple Mackbook Air Series', price: 67000, image: '/deal1.jpg' },
-        { id:22, name: 'Hp Student series', price: 47000, image:'/hp.jpg'}
+        { id:21, name: 'Asuz Vivobook -16S', price: 45000, image: '/azuz.jpg' },
+        { id:22, name: 'Apple Mackbook Air Series', price: 67000, image: '/deal1.jpg' },
+        { id:23, name: 'Hp Student series', price: 47000, image:'/hp.jpg'}
       ],
     },
 
     {
       name: 'SmartWatches',
       products: [
-        { id:23, name: 'Apple Smartwatch -Waterproof', price: 3400, image: '/water.jpg' },
-        { id:24, name: 'Apple Watch Series-9', price: 3200, image: '/apple.jpg' },
-        { id:25, name: 'NoiseFit Colourfit Pro-2', price: 2300, image:'/noise.jpg'}
+        { id:24, name: 'Apple Smartwatch -Waterproof', price: 3400, image: '/water.jpg' },
+        { id:25, name: 'Apple Watch Series-9', price: 3200, image: '/apple.jpg' },
+        { id:26, name: 'NoiseFit Colourfit Pro-2', price: 2300, image:'/noise.jpg'}
       ],
     },
 
     {
       name: ' Backpacks',
       products: [
-        { id:26,name: 'Addixon Black Bags', price: 880, image: '/bag.jpg' },
-        { id:27, name: 'American Tourister Classic', price: 567, image: '/america.jpg' },
-        { id:28, name: 'Roadster Black Backbags', price: 800, image:'/roadsterbag.jpg'}
+        { id:27,name: 'Addixon Black Bags', price: 880, image: '/bag.jpg' },
+        { id:28, name: 'American Tourister Classic', price: 567, image: '/america.jpg' },
+        { id:29, name: 'Roadster Black Backbags', price: 800, image:'/roadsterbag.jpg'}
       ],
     },
 
     {
       name: 'Mobiles',
       products: [
-        { id:29,name: 'Motorola Edge -50 Fusion', price: 27000, image: '/motorola.jpg' },
-        { id:30, name: 'Realme Narzo -70X Flash Series', price: 27000, image: '/realme.jpg' },
-        { id:31, name: 'Redmi Note 14 Pro+', price: 34000, image:'/redmi.jpg'}
+        { id:30,name: 'Motorola Edge -50 Fusion', price: 27000, image: '/motorola.jpg' },
+        { id:31, name: 'Realme Narzo -70X Flash Series', price: 27000, image: '/realme.jpg' },
+        { id:32, name: 'Redmi Note 14 Pro+', price: 34000, image:'/redmi.jpg'}
       ],
     },
+
+    {
+      name: 'Home -Essentials',
+      products: [
+        { id:33,name: 'Philips -Electric Toothbrush', price: 27000, image: '/electric.jpg' },
+        { id:34, name: 'Ninja Airfryer Black -No Oil', price: 27000, image: '/airfryer.jpg' },
+        { id:35, name: 'Instant Icecream Maker -ServeIt', price: 34000, image:'/icecream.jpg'}
+      ],
+    },
+
+    {
+      name: 'Laptop Bags',
+      products: [
+        { id:36,name: 'Dyazo -Blue Blast', price: 500, image: '/dyazo.jpg' },
+        { id:37, name: 'Safari bags -Spacious', price: 370, image: '/safaribag.jpg' },
+        { id:38, name: 'Bennett Casual Laptop Sleev', price: 480, image:'/bennett.jpg'}
+      ],
+    },
+
   ];
+
+  useEffect(() => {
+    if (location.state?.scrollToCategory) {
+      const categoryElement = document.getElementById(location.state.scrollToCategory);
+      if (categoryElement) {
+        categoryElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.state]);
 
   const handleProductClick = (product) => {
     navigate('/productdetail', { state: { product } });

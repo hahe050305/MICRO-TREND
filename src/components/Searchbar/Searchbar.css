@@ -5,12 +5,14 @@
   max-width: 800px;
   margin: auto;
   padding: 10px;
-  z-index: 1; /* Ensures the search bar is on top */
+  z-index: 1;
+  /* flex-grow: 7; Ensures the search bar is on top */
 }
 
 /* Search Bar Styling */
 .search-bar {
   display: flex;
+  flex-direction: row;
   align-items: center;
   border-radius: 20px;
   overflow: hidden;

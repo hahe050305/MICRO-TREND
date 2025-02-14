@@ -22,7 +22,7 @@
 
 .view-cart-btn {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: mediumslateblue;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -32,7 +32,7 @@
 }
 
 .view-cart-btn:hover {
-  background-color: #0056b3;
+  background-color: mediumaquamarine;
   transform: scale(1.05);
 }
 
@@ -84,14 +84,15 @@
 }
 
 .category-cards {
-  /*display: flex; 
+  display: flex; 
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: space-around;*/
+  justify-content: space-between;
 
-  display: grid;
+  /*display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  justify-content: space-around;*/
 
 }
 

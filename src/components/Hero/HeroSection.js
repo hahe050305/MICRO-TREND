@@ -38,6 +38,11 @@ function HeroSection() {
     navigate('/Category'); // Navigates to the Category Page
   };
 
+
+  const handleProductClick = (productCategory) => {
+    navigate('/Category', { state: { scrollToCategory: productCategory } });
+  };
+
   useEffect(() => {
     // Change carousel cards every 5 seconds
     const interval = setInterval(() => {
@@ -107,21 +112,19 @@ function HeroSection() {
         <h2>Trending Now...</h2>
         <div className="trending-cards">
           {[ 
-            { name: 'Boat Earpods', image: '/boats.jpg' },
-            { name: 'Addixon Black Backpack', image: '/bag.jpg' },
-            { name: 'Asuz VivoBook', image: '/azuz.jpg' },
-            { name: 'Apple Watch Series-9', image: '/apple.jpg' },
-            { name: 'Motorola Edge-50 Fusion', image: '/moto.jpg' },
-          ].map((category, index) => (
+            { name: 'Boat Earpods', image: '/boats.jpg', category: 'Airpods' },
+            { name: 'Addixon Black Backpack', image: '/bag.jpg', category: 'Backpacks' },
+            { name: 'Asuz VivoBook', image: '/azuz.jpg', category: 'Laptops'},
+            { name: 'Apple Watch Series-9', image: '/apple.jpg', category: 'SmartWatches' },
+            { name: 'Motorola Edge-50 Fusion', image: '/moto.jpg', category: 'Mobiles' },
+          ].map((product, index) => (
             <div
               className="trending-card"
               key={index}
-              onClick={() =>
-                (window.location.href = `/Category`)
-              }
+              onClick={() => handleProductClick(product.category) }
             >
-              <img src={category.image} alt={category.name} />
-              <h3>{category.name}</h3>
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
             </div>
           ))}
         </div>
@@ -132,21 +135,21 @@ function HeroSection() {
         <h2>Your Recommendations...</h2>
         <div className="trending-cards">
           {[ 
-            { name: 'Philips Electric Tooth Brush', image: '/electric.jpg' },
-            { name: 'Ninja Airfryer Black Blush', image: '/airfryer.jpg' },
-            { name: 'JBL tunes - Bass Boosted', image: '/jbltune.jpg' },
-            { name: 'Instant Ice Cream Maker - ServeIt', image: '/icecream.jpg' },
-            { name: 'Dyazo Office Protective Laptop Sleeve', image: '/dyazo.jpg' }
-          ].map((category, index) => (
+            { name: 'Philips Electric Tooth Brush', image: '/electric.jpg', category: 'home -essentials'},
+            { name: 'Ninja Airfryer Black Blush', image: '/airfryer.jpg', category: 'home -essentials'},
+            { name: 'JBL tunes - Bass Boosted', image: '/jbltune.jpg', category: 'airpods' },
+            { name: 'Instant Ice Cream Maker - ServeIt', image: '/icecream.jpg', category: 'home -essentials'},
+            { name: 'Dyazo Office Protective Laptop Sleeve', image: '/dyazo.jpg', category: 'laptopsbags' }
+          ].map((product, index) => (
             <div
               className="trending-card"
               key={index}
               onClick={() =>
-                (window.location.href = `/Category`)
+                navigate(handleProductClick(product.category))
               }
             >
-              <img src={category.image} alt={category.name} />
-              <h3>{category.name}</h3>
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
             </div>
           ))}
         </div>
